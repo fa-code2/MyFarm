@@ -1,7 +1,3 @@
-"""
-Run this script to train the model with dataset
-"""
-
 from model import CropYieldPredictor
 import os
 import sys
