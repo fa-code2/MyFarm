@@ -41,9 +41,8 @@ def main():
         for i, (feature, score) in enumerate(list(importance.items())[:5], 1):
             print(f"   {i}. {feature}: {score:.3f}")
         
-        print("\n Your model is ready!")
-        print("Now you can run the Flask app: python app.py")
-        
+        print("\n Our model is ready!")
+       
     except Exception as e:
         print(f" Training failed: {str(e)}")
         sys.exit(1)
