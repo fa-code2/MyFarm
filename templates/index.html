@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFarm - Crop Yield Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> MyFarm</h1>
+            <p>AI-Powered Crop Yield Prediction</p>
+        </header>
+
+        <main>
+            <div class = "about-section">
+
+            </div>
+            <div class="prediction-form">
+                <h2>Predict Your Crop Yield</h2>
+                <form id="predictionForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="state">State:</label>
+                            <input type="text" id="state" name="state" required 
+                                   placeholder="e.g., Punjab, Maharashtra">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="crop_year">Crop Year:</label>
+                            <input type="number" id="crop_year" name="crop_year" 
+                                   min="1990" max="2030" value="2024" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="crop">Crop Type:</label>
+                            <input type="text" id="crop" name="crop" required 
+                                   placeholder="e.g., Rice, Wheat, Corn">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="season">Season:</label>
+                            <select id="season" name="season" required>
+                                <option value="">Select Season</option>
+                                <option value="Kharif">Kharif (Monsoon)</option>
+                                <option value="Rabi">Rabi (Winter)</option>
+                                <option value="Zaid">Zaid (Summer)</option>
+                                <option value="Whole Year">Whole Year</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="area">Area (Hectares):</label>
+                            <input type="number" id="area" name="area" 
+                                   min="0" step="0.1" required placeholder="e.g., 100.5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rainfall">Annual Rainfall (mm):</label>
+                            <input type="number" id="rainfall" name="rainfall" 
+                                   min="0" step="0.1" required placeholder="e.g., 1200.5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fertilizer">Fertilizer (kg/hectare):</label>
+                            <input type="number" id="fertilizer" name="fertilizer" 
+                                   min="0" step="0.1" required placeholder="e.g., 150.0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesticide">Pesticide (kg/hectare):</label>
+                            <input type="number" id="pesticide" name="pesticide" 
+                                   min="0" step="0.1" required placeholder="e.g., 50.0">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="predict-btn">
+                        <span class="btn-text"></span> Predict Yield</span>
+                        <span class="loading" style="display: none;">Calculating...</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="results" class="results-section" style="display: none;">
+                <h2>Prediction Results</h2>
+                <div class="result-card">
+                    <div class="prediction-value">
+                        <h3>Predicted Yield</h3>
+                        <p id="prediction-output">-</p>
+                    </div>
+                    
+                    <div class="input-summary">
+                        <h4>Input Summary</h4>
+                        <div id="input-details"></div>
+                    </div>
+
+                    <div class="feature-importance">
+                        <h4>Key Factors</h4>
+                        <div id="importance-chart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 MyFarm - Empowering farmers with AI-driven insights</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
