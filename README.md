@@ -75,15 +75,10 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Set environment variables**
-```bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
-```
 
-5. **Run the application**
+4. **Run the application**
 ```bash
-flask run
+python app.py
 ```
 
 ## Usage
@@ -115,4 +110,4 @@ This project is licensed under the MIT License .
 
 ---
 
-*Empowering farmers with AI-driven insights for sustainable agriculture* 🚜✨
+*Empowering farmers with AI-driven insights for sustainable agriculture* 
