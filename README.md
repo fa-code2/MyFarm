@@ -4,6 +4,9 @@
 ## Overview
 MyFarm is an intelligent agricultural platform that leverages machine learning to provide data-driven insights for modern farming. By analyzing agricultural data and environmental factors, MyFarm empowers farmers to make informed decisions for optimal farm management.
 
+##  Screenshots
+![ Screenshot](assets/home_page.png)
+
 ## Features
 - **Smart Data Integration**: Processes agricultural data and environmental factors
 - **AI-Powered Analytics**: Uses Random Forest models for intelligent agricultural insights
